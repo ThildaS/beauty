@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beauty Store</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">Beauty Store</div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li class="dropdown">
+                    <a href="#">Shop</a>
+                    <div class="dropdown-content">
+                        <a href="#" onclick="filterProducts('all')">All Products</a>
+                        <a href="#" onclick="filterProducts('makeup')">Makeup</a>
+                        <a href="#" onclick="filterProducts('skincare')">Skincare</a>
+                    </div>
+                </li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#" id="cart-icon">Cart (<span id="cart-count">0</span>)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Discover Your Inner Glow</h1>
+            <p>Shop our latest collection of makeup and skincare products.</p>
+            <a href="#" class="cta-button">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- Product Section -->
+    <section class="products">
+        <h2>Our Bestsellers</h2>
+        <div class="product-list" id="product-list">
+            <!-- Product 1 -->
+            <div class="product-item" data-category="makeup">
+                <img src="product1.jpg" alt="Lipstick">
+                <h3>Lipstick</h3>
+                <p>$29.99</p>
+                <button onclick="addToCart('Lipstick', 29.99)">Add to Cart</button>
+                <button class="details-btn" onclick="showDetails('Lipstick', 'A bold red lipstick perfect for any occasion.', 'product1.jpg')">View Details</button>
+            </div>
+            <!-- Product 2 -->
+            <div class="product-item" data-category="skincare">
+                <img src="product2.jpg" alt="Face Cream">
+                <h3>Face Cream</h3>
+                <p>$39.99</p>
+                <button onclick="addToCart('Face Cream', 39.99)">Add to Cart</button>
+                <button class="details-btn" onclick="showDetails('Face Cream', 'A hydrating cream for glowing skin.', 'product2.jpg')">View Details</button>
+            </div>
+            <!-- More products can go here -->
+        </div>
+    </section>
+
+    <!-- Product Details Modal -->
+    <div id="product-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modal-img" src="" alt="Product Image">
+            <h2 id="modal-title"></h2>
+            <p id="modal-description"></p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Beauty Store. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
